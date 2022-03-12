@@ -348,7 +348,7 @@ hl.plugins.nvim_tree = {
     NvimTreeFolderName = colors.Blue,
 }
 hl.plugins.telescope = {
-    TelescopeBorder = colors.Blue,
+    TelescopeBorder = { fg = c.purple, fmt = "bold" },
     TelescopePromptBorder = colors.LightGrey,
     TelescopeResultsBorder = colors.LightGrey,
     TelescopePreviewBorder = colors.LightGrey,
