@@ -82,7 +82,7 @@ hl.common = {
     TabLine = {fg = c.fg, bg = c.bg1},
     TabLineFill = {fg = c.grey, bg = c.bg1},
     TabLineSel =  {fg = c.bg0, bg = c.fg},
-    VertSplit = {fg = c.bg3},
+    WinSeparator  = { fg = c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
     Visual = {bg = c.bg3},
     VisualNOS = {fg = c.none, bg = c.bg2, fmt = "underline"},
     QuickFixLine = {fg = c.blue, fmt = "underline"},
@@ -348,6 +348,7 @@ hl.plugins.nvim_tree = {
     NvimTreeSymlink = colors.Purple,
     NvimTreeFolderName = colors.Blue,
 }
+
 hl.plugins.telescope = {
     TelescopeBorder = colors.LightGrey,
     TelescopePromptBorder = colors.LightGrey,
