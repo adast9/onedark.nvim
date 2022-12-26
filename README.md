@@ -16,6 +16,8 @@
 
 *For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)*
 
+*For latest [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight, upgraded to Neovim 0.8.0 or later built with tree-sitter 0.20.3+*
+
 ### Features
   * 8 theme styles (One Dark + 5 variants) and (One Light + 1 variant)
   * Supporting multiple plugins with hand picked proper colors
@@ -109,6 +111,11 @@ require('onedark').setup  {
         variables = 'none'
     },
 
+    -- Lualine options --
+    lualine = {
+        transparent = false, -- lualine center bar transparency
+    },
+
     -- Custom Highlights --
     colors = {}, -- Override default colors
     highlights = {}, -- Override highlight groups
@@ -152,9 +159,30 @@ require('onedark').setup {
     green = '#00ffaa',            -- redefine an existing color
   },
   highlights = {
+    ["@keyword"] = {fg = '$green'},
+    ["@string"] = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
+    ["@function"] = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
+    ["@function.builtin"] = {fg = '#0059ff'}
+  }
+}
+```
+Note that TreeSitter keywords have been changed after neovim version 0.8 and onwards.
+TS prefix is trimmed and lowercase words should be used separated with '.'
+
+The old way before neovim 0.8 looks like this.
+For all keywords see [this](https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/highlights.lua#L133-L257) file from line 133 to 257
+
+```lua
+require('onedark').setup {
+  colors = {
+    bright_orange = "#ff8800",    -- define a new color
+    green = '#00ffaa',            -- redefine an existing color
+  },
+  highlights = {
     TSKeyword = {fg = '$green'},
     TSString = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
     TSFunction = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
+    TSFuncBuiltin = {fg = '#0059ff'}
   }
 }
 ```
@@ -188,6 +216,7 @@ require('lualine').setup {
   + [Hop](https://github.com/phaazon/hop.nvim)
   + [Mini](https://github.com/echasnovski/mini.nvim)
   + [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+  + [Neotest](https://github.com/nvim-neotest/neotest)
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
