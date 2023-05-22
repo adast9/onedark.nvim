@@ -102,7 +102,7 @@ require('onedark').setup  {
 
     -- Change code style ---
     -- Options are italic, bold, underline, none
-    -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
+    -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
     code_style = {
         comments = 'italic',
         keywords = 'none',
@@ -217,6 +217,7 @@ require('lualine').setup {
   + [Mini](https://github.com/echasnovski/mini.nvim)
   + [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
   + [Neotest](https://github.com/nvim-neotest/neotest)
+  + [Barbecue](https://github.com/utilyre/barbecue.nvim)
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
